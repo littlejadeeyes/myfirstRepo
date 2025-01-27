@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d4f71796415e38073b47d6a3e01d7b83 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 50px; left: 50px; width: 250px; height: 140px; 
+    background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;
+">
+    <b>Legend:</b><br>
+    <i style="background: red; width: 10px; height: 10px; display: inline-block;"></i> Ranks 1-5<br>
+    <i style="background: blue; width: 10px; height: 10px; display: inline-block;"></i> Ranks 6-10<br>
+    <i style="background: green; width: 10px; height: 10px; display: inline-block;"></i> Ranks 11-15<br>
+    <i style="background: purple; width: 10px; height: 10px; display: inline-block;"></i> Ranks 16-20<br>
+</div>
+    
+            <div class="folium-map" id="map_d4f71796415e38073b47d6a3e01d7b83" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d4f71796415e38073b47d6a3e01d7b83 = L.map(
+                "map_d4f71796415e38073b47d6a3e01d7b83",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c5b5847f97ac0591df6da01b73a815a2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c5b5847f97ac0591df6da01b73a815a2.addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var marker_d169f679583f614c5df05434c2c664b6 = L.marker(
+                [13.7563, 100.5018],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_38afa0990a8ac36b6efc42d908495a85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d169f679583f614c5df05434c2c664b6.setIcon(icon_38afa0990a8ac36b6efc42d908495a85);
+        
+    
+        var popup_77e9b662fbdc5587a7304ea3b6a06783 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08cb594e8defd9c26f87e59e92ef41bb = $(`<div id="html_08cb594e8defd9c26f87e59e92ef41bb" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Bangkok<br>     <b>Rank:</b> 1<br>     <b>Visitors (millions):</b> 32.4     </div>`)[0];
+                popup_77e9b662fbdc5587a7304ea3b6a06783.setContent(html_08cb594e8defd9c26f87e59e92ef41bb);
+            
+        
+
+        marker_d169f679583f614c5df05434c2c664b6.bindPopup(popup_77e9b662fbdc5587a7304ea3b6a06783)
+        ;
+
+        
+    
+    
+            marker_d169f679583f614c5df05434c2c664b6.bindTooltip(
+                `<div>
+                     Bangkok (Rank 1)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5632631daf484d2309b086a60b1971ce = L.marker(
+                [41.0082, 28.9784],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_cca234b338e0b04e3dbe4331cc2a79d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5632631daf484d2309b086a60b1971ce.setIcon(icon_cca234b338e0b04e3dbe4331cc2a79d2);
+        
+    
+        var popup_e27910e7e2a8b5016eb680ffcb8b2b0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3438a4832118937d91cbbb9df20fbf0d = $(`<div id="html_3438a4832118937d91cbbb9df20fbf0d" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Istanbul<br>     <b>Rank:</b> 2<br>     <b>Visitors (millions):</b> 23.0     </div>`)[0];
+                popup_e27910e7e2a8b5016eb680ffcb8b2b0f.setContent(html_3438a4832118937d91cbbb9df20fbf0d);
+            
+        
+
+        marker_5632631daf484d2309b086a60b1971ce.bindPopup(popup_e27910e7e2a8b5016eb680ffcb8b2b0f)
+        ;
+
+        
+    
+    
+            marker_5632631daf484d2309b086a60b1971ce.bindTooltip(
+                `<div>
+                     Istanbul (Rank 2)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_12b746b725a4072938d9e8be7121e98f = L.marker(
+                [51.5074, -0.1278],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_9e2c1a2d12e26c33eae151b877caf393 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_12b746b725a4072938d9e8be7121e98f.setIcon(icon_9e2c1a2d12e26c33eae151b877caf393);
+        
+    
+        var popup_afde9379f7f4cb6202a173c3e38700b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_593c8580fd9f13655aedaf7aceb4007c = $(`<div id="html_593c8580fd9f13655aedaf7aceb4007c" style="width: 100.0%; height: 100.0%;">     <b>City:</b> London<br>     <b>Rank:</b> 3<br>     <b>Visitors (millions):</b> 21.7     </div>`)[0];
+                popup_afde9379f7f4cb6202a173c3e38700b1.setContent(html_593c8580fd9f13655aedaf7aceb4007c);
+            
+        
+
+        marker_12b746b725a4072938d9e8be7121e98f.bindPopup(popup_afde9379f7f4cb6202a173c3e38700b1)
+        ;
+
+        
+    
+    
+            marker_12b746b725a4072938d9e8be7121e98f.bindTooltip(
+                `<div>
+                     London (Rank 3)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a5ae13c4f532ed2f09632da4753f6656 = L.marker(
+                [22.3193, 114.1694],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_4b9de3df21763f83e4e9caf564f76d45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a5ae13c4f532ed2f09632da4753f6656.setIcon(icon_4b9de3df21763f83e4e9caf564f76d45);
+        
+    
+        var popup_9a58bc1449a1044d613d457209eb3ccb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b008b862bd35566e6dd46fe50af49e58 = $(`<div id="html_b008b862bd35566e6dd46fe50af49e58" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Hong Kong<br>     <b>Rank:</b> 4<br>     <b>Visitors (millions):</b> 20.5     </div>`)[0];
+                popup_9a58bc1449a1044d613d457209eb3ccb.setContent(html_b008b862bd35566e6dd46fe50af49e58);
+            
+        
+
+        marker_a5ae13c4f532ed2f09632da4753f6656.bindPopup(popup_9a58bc1449a1044d613d457209eb3ccb)
+        ;
+
+        
+    
+    
+            marker_a5ae13c4f532ed2f09632da4753f6656.bindTooltip(
+                `<div>
+                     Hong Kong (Rank 4)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8e38c23b9ecdeeb22e0dd2e173006003 = L.marker(
+                [21.3891, 39.8579],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_4f875b918f2393a53fa7585a077ce103 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8e38c23b9ecdeeb22e0dd2e173006003.setIcon(icon_4f875b918f2393a53fa7585a077ce103);
+        
+    
+        var popup_47adce627256689a1e433ec74421c9b0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1bb32c67b4bbdc7470039eef0bc0642c = $(`<div id="html_1bb32c67b4bbdc7470039eef0bc0642c" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Mecca<br>     <b>Rank:</b> 5<br>     <b>Visitors (millions):</b> 19.3     </div>`)[0];
+                popup_47adce627256689a1e433ec74421c9b0.setContent(html_1bb32c67b4bbdc7470039eef0bc0642c);
+            
+        
+
+        marker_8e38c23b9ecdeeb22e0dd2e173006003.bindPopup(popup_47adce627256689a1e433ec74421c9b0)
+        ;
+
+        
+    
+    
+            marker_8e38c23b9ecdeeb22e0dd2e173006003.bindTooltip(
+                `<div>
+                     Mecca (Rank 5)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1f6bc670f3a3bad8c7bc400279eb1464 = L.marker(
+                [36.8969, 30.7133],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_7615d57b1abec80da2641bb38498f725 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1f6bc670f3a3bad8c7bc400279eb1464.setIcon(icon_7615d57b1abec80da2641bb38498f725);
+        
+    
+        var popup_a9cb194cfe565df2720e802951761475 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41cb4b70a5c7a2a54da9d356e5c0e56b = $(`<div id="html_41cb4b70a5c7a2a54da9d356e5c0e56b" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Antalya<br>     <b>Rank:</b> 6<br>     <b>Visitors (millions):</b> 19.3     </div>`)[0];
+                popup_a9cb194cfe565df2720e802951761475.setContent(html_41cb4b70a5c7a2a54da9d356e5c0e56b);
+            
+        
+
+        marker_1f6bc670f3a3bad8c7bc400279eb1464.bindPopup(popup_a9cb194cfe565df2720e802951761475)
+        ;
+
+        
+    
+    
+            marker_1f6bc670f3a3bad8c7bc400279eb1464.bindTooltip(
+                `<div>
+                     Antalya (Rank 6)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_746222324b28b0a99086d840bbe0cfd9 = L.marker(
+                [25.276987, 55.296249],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_5c2b0a1c84eb62f454b60836d6412710 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_746222324b28b0a99086d840bbe0cfd9.setIcon(icon_5c2b0a1c84eb62f454b60836d6412710);
+        
+    
+        var popup_de380ec47bd91bfb6527777206ef0695 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0ba4612557e50ab58423e1c2ef23d56 = $(`<div id="html_a0ba4612557e50ab58423e1c2ef23d56" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Dubai<br>     <b>Rank:</b> 7<br>     <b>Visitors (millions):</b> 18.2     </div>`)[0];
+                popup_de380ec47bd91bfb6527777206ef0695.setContent(html_a0ba4612557e50ab58423e1c2ef23d56);
+            
+        
+
+        marker_746222324b28b0a99086d840bbe0cfd9.bindPopup(popup_de380ec47bd91bfb6527777206ef0695)
+        ;
+
+        
+    
+    
+            marker_746222324b28b0a99086d840bbe0cfd9.bindTooltip(
+                `<div>
+                     Dubai (Rank 7)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_25fe5e4d7c099ec780b7e904cf3ac758 = L.marker(
+                [22.1987, 113.5439],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_d4b2d270bb9b68f0e8eaab8104ecd70e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_25fe5e4d7c099ec780b7e904cf3ac758.setIcon(icon_d4b2d270bb9b68f0e8eaab8104ecd70e);
+        
+    
+        var popup_5da2785fa31b9d40d67de27aac60b289 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54454680eca39f6684efe2bb56f54aab = $(`<div id="html_54454680eca39f6684efe2bb56f54aab" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Macau<br>     <b>Rank:</b> 8<br>     <b>Visitors (millions):</b> 18.0     </div>`)[0];
+                popup_5da2785fa31b9d40d67de27aac60b289.setContent(html_54454680eca39f6684efe2bb56f54aab);
+            
+        
+
+        marker_25fe5e4d7c099ec780b7e904cf3ac758.bindPopup(popup_5da2785fa31b9d40d67de27aac60b289)
+        ;
+
+        
+    
+    
+            marker_25fe5e4d7c099ec780b7e904cf3ac758.bindTooltip(
+                `<div>
+                     Macau (Rank 8)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_45b3b8f55af30ce3f263ede7d8b8d5c4 = L.marker(
+                [48.8566, 2.3522],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_3270f9935505839f00c7ff6dc7aae743 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_45b3b8f55af30ce3f263ede7d8b8d5c4.setIcon(icon_3270f9935505839f00c7ff6dc7aae743);
+        
+    
+        var popup_789cdee97db266c8679d64b0ef407c22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91234d923694c9118e2596f6c05d7623 = $(`<div id="html_91234d923694c9118e2596f6c05d7623" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Paris<br>     <b>Rank:</b> 9<br>     <b>Visitors (millions):</b> 17.4     </div>`)[0];
+                popup_789cdee97db266c8679d64b0ef407c22.setContent(html_91234d923694c9118e2596f6c05d7623);
+            
+        
+
+        marker_45b3b8f55af30ce3f263ede7d8b8d5c4.bindPopup(popup_789cdee97db266c8679d64b0ef407c22)
+        ;
+
+        
+    
+    
+            marker_45b3b8f55af30ce3f263ede7d8b8d5c4.bindTooltip(
+                `<div>
+                     Paris (Rank 9)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bf7b9283a357f418540e41fe6e843161 = L.marker(
+                [3.139, 101.6869],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_64a4d7fd0268cc92235430952f37a193 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bf7b9283a357f418540e41fe6e843161.setIcon(icon_64a4d7fd0268cc92235430952f37a193);
+        
+    
+        var popup_1defdd9894cc4b510375e9e0355ea3d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_232bf72f8b785e3ecabf67de2246f4cf = $(`<div id="html_232bf72f8b785e3ecabf67de2246f4cf" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Kuala Lumpur<br>     <b>Rank:</b> 10<br>     <b>Visitors (millions):</b> 16.5     </div>`)[0];
+                popup_1defdd9894cc4b510375e9e0355ea3d9.setContent(html_232bf72f8b785e3ecabf67de2246f4cf);
+            
+        
+
+        marker_bf7b9283a357f418540e41fe6e843161.bindPopup(popup_1defdd9894cc4b510375e9e0355ea3d9)
+        ;
+
+        
+    
+    
+            marker_bf7b9283a357f418540e41fe6e843161.bindTooltip(
+                `<div>
+                     Kuala Lumpur (Rank 10)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a9d6edfe11b7066291e37d5d6b1c3b8b = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_b5710688d22e4775eb5b67ee19b28263 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a9d6edfe11b7066291e37d5d6b1c3b8b.setIcon(icon_b5710688d22e4775eb5b67ee19b28263);
+        
+    
+        var popup_99c6f82d1154547de3a8e6433b6c089f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_416dd40a776498bcc8678fe5c3ff3e5d = $(`<div id="html_416dd40a776498bcc8678fe5c3ff3e5d" style="width: 100.0%; height: 100.0%;">     <b>City:</b> New York City<br>     <b>Rank:</b> 11<br>     <b>Visitors (millions):</b> 11.7     </div>`)[0];
+                popup_99c6f82d1154547de3a8e6433b6c089f.setContent(html_416dd40a776498bcc8678fe5c3ff3e5d);
+            
+        
+
+        marker_a9d6edfe11b7066291e37d5d6b1c3b8b.bindPopup(popup_99c6f82d1154547de3a8e6433b6c089f)
+        ;
+
+        
+    
+    
+            marker_a9d6edfe11b7066291e37d5d6b1c3b8b.bindTooltip(
+                `<div>
+                     New York City (Rank 11)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6eaa1dd20e5090912f83651cdcfc5ce9 = L.marker(
+                [1.3521, 103.8198],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_1aa5b8d76297e66d446cc8bbbf7c5e6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6eaa1dd20e5090912f83651cdcfc5ce9.setIcon(icon_1aa5b8d76297e66d446cc8bbbf7c5e6c);
+        
+    
+        var popup_170f0f7df59403a40fa6ea4776432527 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6eef1b417ea3e118785a5c314a0e84cb = $(`<div id="html_6eef1b417ea3e118785a5c314a0e84cb" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Singapore<br>     <b>Rank:</b> 12<br>     <b>Visitors (millions):</b> 11.3     </div>`)[0];
+                popup_170f0f7df59403a40fa6ea4776432527.setContent(html_6eef1b417ea3e118785a5c314a0e84cb);
+            
+        
+
+        marker_6eaa1dd20e5090912f83651cdcfc5ce9.bindPopup(popup_170f0f7df59403a40fa6ea4776432527)
+        ;
+
+        
+    
+    
+            marker_6eaa1dd20e5090912f83651cdcfc5ce9.bindTooltip(
+                `<div>
+                     Singapore (Rank 12)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cdbac48e6d9dc28b5d6f5af670aecee9 = L.marker(
+                [35.6895, 139.6917],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_e98aa0ad3b25d3a7d18c86d1d4c46b20 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cdbac48e6d9dc28b5d6f5af670aecee9.setIcon(icon_e98aa0ad3b25d3a7d18c86d1d4c46b20);
+        
+    
+        var popup_a367458c46ce4c891eceb8ef4a9c1046 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82c4371bb963e1a1b9c7133c446d652c = $(`<div id="html_82c4371bb963e1a1b9c7133c446d652c" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Tokyo<br>     <b>Rank:</b> 13<br>     <b>Visitors (millions):</b> 10.5     </div>`)[0];
+                popup_a367458c46ce4c891eceb8ef4a9c1046.setContent(html_82c4371bb963e1a1b9c7133c446d652c);
+            
+        
+
+        marker_cdbac48e6d9dc28b5d6f5af670aecee9.bindPopup(popup_a367458c46ce4c891eceb8ef4a9c1046)
+        ;
+
+        
+    
+    
+            marker_cdbac48e6d9dc28b5d6f5af670aecee9.bindTooltip(
+                `<div>
+                     Tokyo (Rank 13)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3ae29e1d6a6fd9487a9f91ea6b7e37fd = L.marker(
+                [37.5665, 126.978],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_46300bb887bb438abb729db6e83dd8ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3ae29e1d6a6fd9487a9f91ea6b7e37fd.setIcon(icon_46300bb887bb438abb729db6e83dd8ed);
+        
+    
+        var popup_5bbf9fdf5fb813f1af853258ab74c42a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08970edf57dc49d3b04084fd61f9dcf3 = $(`<div id="html_08970edf57dc49d3b04084fd61f9dcf3" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Seoul<br>     <b>Rank:</b> 14<br>     <b>Visitors (millions):</b> 10.4     </div>`)[0];
+                popup_5bbf9fdf5fb813f1af853258ab74c42a.setContent(html_08970edf57dc49d3b04084fd61f9dcf3);
+            
+        
+
+        marker_3ae29e1d6a6fd9487a9f91ea6b7e37fd.bindPopup(popup_5bbf9fdf5fb813f1af853258ab74c42a)
+        ;
+
+        
+    
+    
+            marker_3ae29e1d6a6fd9487a9f91ea6b7e37fd.bindTooltip(
+                `<div>
+                     Seoul (Rank 14)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c02ddb30d4eaa9b64b220bb48d04eb97 = L.marker(
+                [7.8804, 98.3923],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_67b67219453c21a92ab45c235eaaac97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c02ddb30d4eaa9b64b220bb48d04eb97.setIcon(icon_67b67219453c21a92ab45c235eaaac97);
+        
+    
+        var popup_2c9c1e0344a909a3be870eb2f3640ba1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_182d30e323a952c07ad2f6aca520a835 = $(`<div id="html_182d30e323a952c07ad2f6aca520a835" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Phuket<br>     <b>Rank:</b> 15<br>     <b>Visitors (millions):</b> 10.1     </div>`)[0];
+                popup_2c9c1e0344a909a3be870eb2f3640ba1.setContent(html_182d30e323a952c07ad2f6aca520a835);
+            
+        
+
+        marker_c02ddb30d4eaa9b64b220bb48d04eb97.bindPopup(popup_2c9c1e0344a909a3be870eb2f3640ba1)
+        ;
+
+        
+    
+    
+            marker_c02ddb30d4eaa9b64b220bb48d04eb97.bindTooltip(
+                `<div>
+                     Phuket (Rank 15)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_94b0c7d4069a81008566250654de5a80 = L.marker(
+                [45.4642, 9.19],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_07968a37e36107c924c55b843692ee6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94b0c7d4069a81008566250654de5a80.setIcon(icon_07968a37e36107c924c55b843692ee6c);
+        
+    
+        var popup_4d63b77aed7c865a9065951d88d7875e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_586049fbff9ef218fe5119e254570d06 = $(`<div id="html_586049fbff9ef218fe5119e254570d06" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Milan<br>     <b>Rank:</b> 16<br>     <b>Visitors (millions):</b> 9.8     </div>`)[0];
+                popup_4d63b77aed7c865a9065951d88d7875e.setContent(html_586049fbff9ef218fe5119e254570d06);
+            
+        
+
+        marker_94b0c7d4069a81008566250654de5a80.bindPopup(popup_4d63b77aed7c865a9065951d88d7875e)
+        ;
+
+        
+    
+    
+            marker_94b0c7d4069a81008566250654de5a80.bindTooltip(
+                `<div>
+                     Milan (Rank 16)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0c2bae6b3a9b5b1f3052de63d6e4cba5 = L.marker(
+                [41.3879, 2.1699],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_304693ca528554a6b22a0948c3ac7ddc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0c2bae6b3a9b5b1f3052de63d6e4cba5.setIcon(icon_304693ca528554a6b22a0948c3ac7ddc);
+        
+    
+        var popup_6a7dd30c3b714766fae06f678199097d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c3a1c6d3a60b2170695ed38c74455b5 = $(`<div id="html_1c3a1c6d3a60b2170695ed38c74455b5" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Barcelona<br>     <b>Rank:</b> 17<br>     <b>Visitors (millions):</b> 9.7     </div>`)[0];
+                popup_6a7dd30c3b714766fae06f678199097d.setContent(html_1c3a1c6d3a60b2170695ed38c74455b5);
+            
+        
+
+        marker_0c2bae6b3a9b5b1f3052de63d6e4cba5.bindPopup(popup_6a7dd30c3b714766fae06f678199097d)
+        ;
+
+        
+    
+    
+            marker_0c2bae6b3a9b5b1f3052de63d6e4cba5.bindTooltip(
+                `<div>
+                     Barcelona (Rank 17)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_65e3595676cb65f0f8a9e47ca44f83b0 = L.marker(
+                [34.6937, 135.5023],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_85ab70f2e8ce3048e1e64ebd703a5888 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_65e3595676cb65f0f8a9e47ca44f83b0.setIcon(icon_85ab70f2e8ce3048e1e64ebd703a5888);
+        
+    
+        var popup_06f7f30c108dc7dad48de6523eb9b9bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b48515a53405bf99a6dc092e8628644 = $(`<div id="html_1b48515a53405bf99a6dc092e8628644" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Osaka<br>     <b>Rank:</b> 18<br>     <b>Visitors (millions):</b> 9.5     </div>`)[0];
+                popup_06f7f30c108dc7dad48de6523eb9b9bc.setContent(html_1b48515a53405bf99a6dc092e8628644);
+            
+        
+
+        marker_65e3595676cb65f0f8a9e47ca44f83b0.bindPopup(popup_06f7f30c108dc7dad48de6523eb9b9bc)
+        ;
+
+        
+    
+    
+            marker_65e3595676cb65f0f8a9e47ca44f83b0.bindTooltip(
+                `<div>
+                     Osaka (Rank 18)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3f30e8df1681728619c269743de8c214 = L.marker(
+                [48.2082, 16.3738],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_8f922c2454eb607a2cac264bab58a35f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3f30e8df1681728619c269743de8c214.setIcon(icon_8f922c2454eb607a2cac264bab58a35f);
+        
+    
+        var popup_9fab0e82dce6aaa1727ecfed4f15a809 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a96cb97bb9fc4c09958211e7da19b830 = $(`<div id="html_a96cb97bb9fc4c09958211e7da19b830" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Vienna<br>     <b>Rank:</b> 19<br>     <b>Visitors (millions):</b> 9.4     </div>`)[0];
+                popup_9fab0e82dce6aaa1727ecfed4f15a809.setContent(html_a96cb97bb9fc4c09958211e7da19b830);
+            
+        
+
+        marker_3f30e8df1681728619c269743de8c214.bindPopup(popup_9fab0e82dce6aaa1727ecfed4f15a809)
+        ;
+
+        
+    
+    
+            marker_3f30e8df1681728619c269743de8c214.bindTooltip(
+                `<div>
+                     Vienna (Rank 19)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_73dfdffd69ac8adbb5aa0362069406be = L.marker(
+                [22.3193, 114.1694],
+                {
+}
+            ).addTo(map_d4f71796415e38073b47d6a3e01d7b83);
+        
+    
+            var icon_c8fc1432d7277e63c2f2fb6a56f04f86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_73dfdffd69ac8adbb5aa0362069406be.setIcon(icon_c8fc1432d7277e63c2f2fb6a56f04f86);
+        
+    
+        var popup_d62fcc02bf0e61f962bf3a131133b873 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13427d20ca613bdf6d414184c40c2a7d = $(`<div id="html_13427d20ca613bdf6d414184c40c2a7d" style="width: 100.0%; height: 100.0%;">     <b>City:</b> Hong Kong<br>     <b>Rank:</b> 20<br>     <b>Visitors (millions):</b> 9.3     </div>`)[0];
+                popup_d62fcc02bf0e61f962bf3a131133b873.setContent(html_13427d20ca613bdf6d414184c40c2a7d);
+            
+        
+
+        marker_73dfdffd69ac8adbb5aa0362069406be.bindPopup(popup_d62fcc02bf0e61f962bf3a131133b873)
+        ;
+
+        
+    
+    
+            marker_73dfdffd69ac8adbb5aa0362069406be.bindTooltip(
+                `<div>
+                     Hong Kong (Rank 20)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
